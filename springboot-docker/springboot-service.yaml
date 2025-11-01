@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-service-api
+spec:
+  selector:
+    app: springboot-app
+  type: LoadBalancer  # ✅ This line exposes the service externally
+  ports:
+    - protocol: TCP
+      port: 8021        # External port
+      targetPort: 9376  # Pod container port
